@@ -8,6 +8,7 @@ Esta carpeta contiene material docente preparado para las clases del módulo.
 |---|---|
 | `guion_clase.md` | Guion detallado para el docente: explica cada momento de la clase, los conceptos técnicos y los comandos a mostrar. |
 | `contenido_ppt.md` | Contenido estructurado diapositiva por diapositiva, listo para trasladar a una presentación PowerPoint (`.pptx`). |
+| `presentacion_cable_rj45.pptx` | Presentación en PowerPoint para clase práctica de confección de cable RJ45 (herramientas, normas T568A/T568B y paso a paso). |
 | `ejercicio_packet_tracer.md` | Actividad práctica guiada para que los estudiantes configuren IPs en Cisco Packet Tracer. |
 
 ## Tema de la clase
