@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instalación de Canaletas y Conectividad</title>
+  <title>Instalación de Canaletas y Conectividad - Presentación</title>
   <style>
     :root {
       --azul: #1d4ed8;
+      --azul-oscuro: #1e3a8a;
       --azul-claro: #dbeafe;
       --gris: #475569;
-      --gris-suave: #f8fafc;
+      --gris-fondo: #f8fafc;
       --borde: #cbd5e1;
       --texto: #0f172a;
       --verde: #166534;
       --amarillo: #92400e;
       --rojo: #991b1b;
+      --blanco: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -22,394 +24,450 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
+      background: #e2e8f0;
       color: var(--texto);
-      background: #ffffff;
-      line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, var(--azul), #60a5fa);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 2.2rem;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-
-    main {
-      max-width: 1100px;
+    .contenedor {
+      max-width: 1280px;
       margin: 0 auto;
       padding: 24px;
     }
 
-    section {
-      margin-bottom: 28px;
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    .intro {
+      background: linear-gradient(135deg, var(--azul), #60a5fa);
+      color: white;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
     }
 
-    h2 {
+    .intro h1 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
+    }
+
+    .intro p {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .slide {
+      width: 100%;
+      min-height: 720px;
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 42px 48px;
+      margin: 0 auto 28px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      page-break-after: always;
+      border: 1px solid #dbe2ea;
+    }
+
+    .slide h2 {
       color: var(--azul);
+      font-size: 2rem;
       margin-top: 0;
+      margin-bottom: 18px;
     }
 
-    h3 {
-      color: #1e293b;
+    .slide h3 {
+      color: var(--azul-oscuro);
+      margin-bottom: 12px;
     }
 
-    .objetivos, .nota, .seguridad, .errores, .actividad {
-      border-left: 6px solid var(--azul);
-      background: var(--gris-suave);
+    .slide p, .slide li {
+      font-size: 1.15rem;
+      line-height: 1.65;
     }
 
-    .seguridad { border-left-color: var(--rojo); }
-    .errores { border-left-color: var(--amarillo); }
-    .actividad { border-left-color: var(--verde); }
+    .slide ul, .slide ol {
+      padding-left: 28px;
+    }
 
-    .grid {
+    .portada {
+      background: linear-gradient(145deg, #1d4ed8, #93c5fd);
+      color: white;
+      text-align: center;
+      align-items: center;
+    }
+
+    .portada h2 {
+      color: white;
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+    }
+
+    .portada p {
+      font-size: 1.3rem;
+      max-width: 900px;
+      margin: 10px auto;
+    }
+
+    .dos-columnas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .tres-columnas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .card {
       border: 1px solid var(--borde);
-      border-radius: 12px;
-      padding: 16px;
-      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      background: #f8fafc;
+      height: 100%;
     }
 
     .card h4 {
       margin-top: 0;
       color: var(--azul);
+      font-size: 1.15rem;
     }
 
-    ul, ol {
-      padding-left: 22px;
-    }
-
-    .paso {
-      margin-bottom: 18px;
-      padding: 16px;
+    .destacado {
+      background: var(--azul-claro);
+      border-left: 8px solid var(--azul);
+      padding: 18px;
       border-radius: 12px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
     }
 
-    .paso strong {
-      color: var(--azul);
+    .seguridad {
+      background: #fef2f2;
+      border-left-color: var(--rojo);
     }
 
-    .imagenes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
+    .errores {
+      background: #fff7ed;
+      border-left-color: var(--amarillo);
     }
 
-    .imagenes img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      border: 1px solid var(--borde);
-      background: #fff;
-    }
-
-    .pie {
-      text-align: center;
-      font-size: 0.95rem;
-      color: var(--gris);
-      padding: 30px 20px 40px;
+    .actividad {
+      background: #f0fdf4;
+      border-left-color: var(--verde);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 12px;
+      font-size: 1rem;
     }
 
     th, td {
       border: 1px solid var(--borde);
-      padding: 10px;
+      padding: 12px;
       text-align: left;
       vertical-align: top;
     }
 
     th {
       background: var(--azul-claro);
-      color: #1e3a8a;
+      color: var(--azul-oscuro);
     }
 
-    .small {
-      font-size: 0.95rem;
+    .paso {
+      margin-bottom: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .pie-slide {
+      margin-top: auto;
+      text-align: right;
       color: var(--gris);
+      font-size: 0.95rem;
+      padding-top: 18px;
+    }
+
+    .nota {
+      font-size: 1rem;
+      color: var(--gris);
+      margin-top: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .dos-columnas, .tres-columnas {
+        grid-template-columns: 1fr;
+      }
+
+      .slide {
+        padding: 28px 24px;
+        min-height: auto;
+      }
+
+      .portada h2 {
+        font-size: 2.1rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .contenedor {
+        max-width: 100%;
+        padding: 0;
+      }
+      .intro {
+        display: none;
+      }
+      .slide {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        min-height: 100vh;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Instalación de Canaletas y Conectividad</h1>
-    <p>Material de apoyo en español para estudiantes de 3° medio</p>
-  </header>
+  <div class="contenedor">
+    <div class="intro">
+      <h1>Versión HTML tipo presentación</h1>
+      <p>Este material fue reorganizado en formato visual similar a diapositivas, en español y pensado para estudiantes de 3° medio.</p>
+    </div>
 
-  <main>
-    <section class="objetivos">
-      <h2>Objetivo de aprendizaje</h2>
-      <p>Comprender el proceso de instalación de canaletas para conducción y ordenamiento de cables, aplicando criterios de seguridad, prolijidad, planificación y conectividad básica en una instalación escolar o domiciliaria.</p>
+    <section class="slide portada">
+      <h2>Instalación de Canaletas y Conectividad</h2>
+      <p><strong>Material de apoyo para 3° medio</strong></p>
+      <p>Aprender a planificar, instalar y ordenar canaletas para proteger cables y mejorar la conectividad de una instalación.</p>
+      <div class="pie-slide">Diapositiva 1</div>
+    </section>
+
+    <section class="slide">
+      <h2>Objetivo de la clase</h2>
+      <div class="destacado">
+        <p>Comprender el proceso de instalación de canaletas, reconociendo herramientas, materiales, medidas de seguridad y buenas prácticas para lograr un trabajo limpio, seguro y funcional.</p>
+      </div>
       <ul>
-        <li>Reconocer herramientas y materiales usados en la instalación.</li>
-        <li>Identificar las etapas del trabajo, desde la medición hasta la fijación final.</li>
-        <li>Aplicar normas básicas de seguridad y orden.</li>
-        <li>Relacionar la instalación de canaletas con una conectividad más segura, limpia y eficiente.</li>
+        <li>Identificar el uso de las canaletas en instalaciones eléctricas y de conectividad.</li>
+        <li>Aplicar una secuencia de trabajo ordenada.</li>
+        <li>Valorar la prolijidad, la seguridad y la planificación técnica.</li>
       </ul>
+      <div class="pie-slide">Diapositiva 2</div>
     </section>
 
-    <section>
+    <section class="slide">
       <h2>¿Qué es una canaleta?</h2>
-      <p>Una canaleta es un elemento de protección y ordenamiento que permite conducir cables eléctricos, de datos o de telecomunicaciones por muros, esquinas o superficies, evitando que queden expuestos. Su uso mejora la presentación de la instalación, facilita el mantenimiento y ayuda a proteger los conductores frente a daños mecánicos leves.</p>
-      <p>En trabajos de conectividad, las canaletas se utilizan para guiar cables de red, telefonía, señal o alimentación, manteniendo una trayectoria clara, segura y de fácil inspección.</p>
-    </section>
-
-    <section>
-      <h2>Importancia de una buena instalación</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Seguridad</h4>
-          <p>Reduce el riesgo de tropiezos, tirones y exposición innecesaria de cables.</p>
+      <div class="dos-columnas">
+        <div>
+          <p>Una canaleta es un elemento que se instala sobre muros, esquinas o superficies para conducir y proteger cables eléctricos, de red o de señal.</p>
+          <p>Su función principal es mantener los cables ordenados, protegidos y visibles para facilitar el mantenimiento.</p>
         </div>
         <div class="card">
-          <h4>Orden</h4>
-          <p>Permite que los circuitos o enlaces de conectividad se vean limpios y bien distribuidos.</p>
-        </div>
-        <div class="card">
-          <h4>Mantenimiento</h4>
-          <p>Facilita la revisión, el reemplazo o la ampliación de cables en el futuro.</p>
-        </div>
-        <div class="card">
-          <h4>Presentación profesional</h4>
-          <p>Una instalación prolija transmite calidad, planificación y cuidado en el trabajo técnico.</p>
+          <h4>Ventajas</h4>
+          <ul>
+            <li>Mejora el orden del cableado.</li>
+            <li>Protege los conductores.</li>
+            <li>Facilita futuras ampliaciones.</li>
+            <li>Entrega una terminación más profesional.</li>
+          </ul>
         </div>
       </div>
+      <div class="pie-slide">Diapositiva 3</div>
     </section>
 
-    <section>
+    <section class="slide">
       <h2>Herramientas y materiales</h2>
       <table>
         <thead>
           <tr>
-            <th>Herramienta o material</th>
-            <th>Uso principal</th>
+            <th>Elemento</th>
+            <th>Uso</th>
             <th>Descripción</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Cinta métrica</td>
-            <td>Medir recorridos</td>
-            <td>Permite calcular con precisión el largo de la canaleta y la ubicación de accesorios o puntos de fijación.</td>
+            <td>Medición</td>
+            <td>Permite medir con precisión los tramos antes de cortar.</td>
           </tr>
           <tr>
             <td>Lápiz o marcador</td>
             <td>Trazado</td>
-            <td>Se usa para marcar sobre el muro los puntos de referencia antes de cortar o instalar.</td>
+            <td>Sirve para marcar líneas guía y puntos de fijación.</td>
           </tr>
           <tr>
             <td>Nivel</td>
             <td>Alineación</td>
-            <td>Ayuda a que la canaleta quede recta, mejorando la estética y evitando errores de montaje.</td>
+            <td>Ayuda a que la canaleta quede recta y con mejor terminación.</td>
           </tr>
           <tr>
-            <td>Sierra de arco o herramienta de corte</td>
-            <td>Corte de canaleta</td>
-            <td>Sirve para ajustar la longitud de la canaleta según la medida requerida. El corte debe ser limpio para lograr un buen ensamble.</td>
+            <td>Sierra o herramienta de corte</td>
+            <td>Corte</td>
+            <td>Se utiliza para ajustar la canaleta al largo requerido.</td>
           </tr>
           <tr>
-            <td>Destornillador</td>
+            <td>Taladro, tornillos y tarugos</td>
             <td>Fijación</td>
-            <td>Se utiliza para apretar tornillos al instalar la base de la canaleta o sus accesorios.</td>
+            <td>Permiten sujetar firmemente la canaleta cuando corresponde.</td>
           </tr>
           <tr>
-            <td>Taladro</td>
-            <td>Perforación</td>
-            <td>Permite perforar muros o superficies duras para colocar tornillos y tarugos cuando la instalación lo requiere.</td>
-          </tr>
-          <tr>
-            <td>Tarugos y tornillos</td>
-            <td>Sujeción</td>
-            <td>Entregan firmeza a la instalación cuando la canaleta se fija de manera mecánica al muro.</td>
-          </tr>
-          <tr>
-            <td>Canaleta con tapa</td>
-            <td>Conducción de cables</td>
-            <td>Es el elemento principal de la instalación. Protege y ordena el tendido.</td>
-          </tr>
-          <tr>
-            <td>Accesorios de canaleta</td>
-            <td>Terminaciones</td>
-            <td>Incluyen uniones, esquinas interiores, esquinas exteriores y tapas terminales, que mejoran la continuidad y la terminación del trabajo.</td>
-          </tr>
-          <tr>
-            <td>Cables de red o alimentación</td>
-            <td>Conectividad</td>
-            <td>Son los conductores que se alojarán en la canaleta. Deben instalarse con cuidado, evitando tensión excesiva, dobleces bruscos o aplastamientos.</td>
+            <td>Canaleta y accesorios</td>
+            <td>Instalación</td>
+            <td>Incluye base, tapa, uniones, esquinas y terminales.</td>
           </tr>
         </tbody>
       </table>
+      <div class="pie-slide">Diapositiva 4</div>
     </section>
 
-    <section class="seguridad">
-      <h2>Normas básicas de seguridad</h2>
-      <ul>
-        <li>Revisar el área de trabajo antes de comenzar.</li>
-        <li>Usar herramientas en buen estado.</li>
-        <li>Utilizar elementos de protección personal cuando corresponda, como lentes de seguridad.</li>
-        <li>Si se trabaja cerca de instalaciones eléctricas, verificar condiciones de seguridad antes de perforar o intervenir.</li>
-        <li>Mantener el puesto limpio y libre de obstáculos.</li>
-        <li>No forzar cables ni usar materiales dañados.</li>
-      </ul>
-      <p class="small">Importante: en actividades pedagógicas con estudiantes, el trabajo debe ser guiado por el docente o monitor responsable.</p>
+    <section class="slide">
+      <h2>Seguridad en el trabajo</h2>
+      <div class="destacado seguridad">
+        <ul>
+          <li>Trabajar con orden y atención.</li>
+          <li>Revisar el estado de las herramientas antes de usarlas.</li>
+          <li>Usar lentes de seguridad si hay corte o perforación.</li>
+          <li>Evitar perforar sin revisar previamente el área.</li>
+          <li>Seguir siempre las indicaciones del docente.</li>
+        </ul>
+      </div>
+      <p class="nota">La seguridad es parte fundamental del trabajo técnico y debe considerarse desde el inicio hasta el cierre de la actividad.</p>
+      <div class="pie-slide">Diapositiva 5</div>
     </section>
 
-    <section>
-      <h2>Paso a paso de la instalación</h2>
-
+    <section class="slide">
+      <h2>Paso 1: Planificar el recorrido</h2>
       <div class="paso">
-        <p><strong>Paso 1: Observar y planificar el recorrido.</strong><br>
-        Antes de instalar, se debe analizar por dónde pasarán los cables. Conviene elegir trayectos rectos, ordenados y cercanos a muros o esquinas. Una buena planificación evita cortes innecesarios y mejora la presentación final.</p>
+        <p>Antes de instalar, se debe observar el espacio y decidir por dónde pasará la canaleta. Se recomienda elegir trayectos rectos, cercanos a esquinas o bordes y que no interfieran con el tránsito de personas.</p>
       </div>
-
       <div class="paso">
-        <p><strong>Paso 2: Medir con precisión.</strong><br>
-        Con la cinta métrica se determina el largo exacto del tramo a cubrir. Esta etapa es muy importante, porque una medición incorrecta genera pérdidas de material o uniones mal hechas.</p>
+        <p>Planificar bien ayuda a ahorrar material, evitar errores y obtener una instalación más limpia y segura.</p>
       </div>
-
-      <div class="paso">
-        <p><strong>Paso 3: Marcar la superficie.</strong><br>
-        Con lápiz o marcador se trazan los puntos donde irá instalada la canaleta. Se recomienda usar nivel para asegurar una línea recta y prolija.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 4: Cortar la canaleta.</strong><br>
-        Se corta la canaleta según la medida obtenida. El corte debe realizarse con cuidado para evitar rebabas, grietas o deformaciones que dificulten la colocación de la tapa o de los accesorios.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 5: Presentar y verificar.</strong><br>
-        Antes de fijar definitivamente, se recomienda presentar la canaleta en su posición para revisar si ajusta correctamente y si el recorrido está bien alineado.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 6: Fijar la base.</strong><br>
-        La canaleta puede fijarse mediante tornillos y tarugos, o según el sistema definido para la actividad. La fijación debe ser firme, pero sin dañar el material.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 7: Ordenar e instalar los cables.</strong><br>
-        Los cables se colocan dentro de la canaleta de forma ordenada. No deben quedar torcidos, aplastados ni excesivamente tensos. Si hay varios tipos de cable, es importante distinguirlos y organizarlos correctamente.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 8: Colocar tapa y accesorios.</strong><br>
-        Una vez revisado el tendido, se instala la tapa de la canaleta y los accesorios correspondientes. Esto mejora la protección del cableado y la terminación visual del trabajo.</p>
-      </div>
-
-      <div class="paso">
-        <p><strong>Paso 9: Revisar el resultado final.</strong><br>
-        Se debe comprobar que la canaleta esté recta, firme y limpia, y que los cables no presenten daños. También es recomendable verificar que la conectividad funcione correctamente si se trata de cables de red o señal.</p>
-      </div>
+      <div class="pie-slide">Diapositiva 6</div>
     </section>
 
-    <section>
-      <h2>Información útil sobre conectividad</h2>
-      <ul>
-        <li>Los cables de red deben instalarse con cuidado para no dañar su estructura interna.</li>
-        <li>Evitar dobleces muy cerrados ayuda a conservar una buena transmisión de datos.</li>
-        <li>Es recomendable mantener ordenados los tramos para facilitar futuras mantenciones.</li>
-        <li>Cuando sea posible, identificar los cables mejora el trabajo técnico y el diagnóstico posterior.</li>
-        <li>Una canalización ordenada favorece la seguridad y la calidad de la instalación.</li>
-      </ul>
+    <section class="slide">
+      <h2>Paso 2: Medir y marcar</h2>
+      <div class="dos-columnas">
+        <div>
+          <p>Con la cinta métrica se toma la medida exacta del tramo a cubrir. Luego se utiliza lápiz o marcador para señalar la ubicación de la canaleta.</p>
+          <p>Si se usa un nivel, la instalación tendrá una mejor presentación y evitará desviaciones.</p>
+        </div>
+        <div class="card">
+          <h4>Consejo</h4>
+          <p>Medir dos veces antes de cortar permite reducir errores y desperdicio de material.</p>
+        </div>
+      </div>
+      <div class="pie-slide">Diapositiva 7</div>
     </section>
 
-    <section class="errores">
-      <h2>Errores frecuentes que se deben evitar</h2>
-      <ul>
-        <li>Medir mal antes de cortar.</li>
-        <li>Instalar la canaleta torcida o desnivelada.</li>
-        <li>Usar demasiada fuerza al colocar cables o tapas.</li>
-        <li>Dejar cables comprimidos dentro de la canaleta.</li>
-        <li>No considerar esquinas, uniones o terminaciones.</li>
-        <li>Trabajar sin ordenar el espacio o sin supervisión adecuada.</li>
-      </ul>
+    <section class="slide">
+      <h2>Paso 3: Cortar y presentar</h2>
+      <div class="paso">
+        <p>La canaleta se corta según la medida obtenida. El corte debe ser recto y limpio para asegurar una buena unión con tapas o accesorios.</p>
+      </div>
+      <div class="paso">
+        <p>Antes de fijarla definitivamente, se recomienda presentarla sobre la superficie para confirmar que encaja bien en el recorrido planificado.</p>
+      </div>
+      <div class="pie-slide">Diapositiva 8</div>
     </section>
 
-    <section>
+    <section class="slide">
+      <h2>Paso 4: Fijar la canaleta</h2>
+      <p>Una vez verificado el recorrido, se fija la base de la canaleta. Dependiendo de la superficie y del trabajo, se puede usar fijación mecánica con tornillos y tarugos.</p>
+      <p>La fijación debe quedar firme, alineada y sin deformar la canaleta.</p>
+      <div class="pie-slide">Diapositiva 9</div>
+    </section>
+
+    <section class="slide">
+      <h2>Paso 5: Instalar los cables</h2>
+      <div class="dos-columnas">
+        <div>
+          <p>Los cables deben quedar ordenados dentro de la canaleta. No se deben forzar, apretar en exceso ni doblar de manera brusca.</p>
+          <p>En el caso de conectividad, una mala manipulación puede afectar el funcionamiento del enlace.</p>
+        </div>
+        <div class="card">
+          <h4>Recomendación</h4>
+          <ul>
+            <li>Ordenar por tipo de cable.</li>
+            <li>Evitar tensión innecesaria.</li>
+            <li>Identificar cables cuando sea posible.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie-slide">Diapositiva 10</div>
+    </section>
+
+    <section class="slide">
+      <h2>Paso 6: Cerrar y revisar</h2>
+      <p>Después de ordenar el cableado, se coloca la tapa y los accesorios de terminación. Luego se revisa que todo quede firme, derecho y limpio.</p>
+      <p>Si se trata de un cable de red, conviene comprobar la conectividad para asegurar que el sistema funcione correctamente.</p>
+      <div class="pie-slide">Diapositiva 11</div>
+    </section>
+
+    <section class="slide">
       <h2>Buenas prácticas</h2>
-      <div class="grid">
+      <div class="tres-columnas">
         <div class="card">
-          <h4>Medir dos veces</h4>
-          <p>Siempre es preferible revisar nuevamente la medida antes de cortar.</p>
+          <h4>Orden</h4>
+          <p>Mantener el lugar limpio y las herramientas organizadas mejora el trabajo.</p>
         </div>
         <div class="card">
-          <h4>Mantener el orden</h4>
-          <p>Un puesto de trabajo ordenado mejora la seguridad y la eficiencia.</p>
+          <h4>Precisión</h4>
+          <p>Medir bien y revisar la alineación permite mejores terminaciones.</p>
         </div>
         <div class="card">
-          <h4>Cuidar la terminación</h4>
-          <p>Las esquinas, tapas y uniones bien colocadas mejoran el aspecto final del trabajo.</p>
-        </div>
-        <div class="card">
-          <h4>Revisar la conectividad</h4>
-          <p>Después de instalar, conviene comprobar que el cableado cumple su función correctamente.</p>
+          <h4>Revisión final</h4>
+          <p>Siempre conviene revisar fijación, tapa, accesorios y estado del cableado.</p>
         </div>
       </div>
+      <div class="pie-slide">Diapositiva 12</div>
     </section>
 
-    <section class="actividad">
-      <h2>Actividad sugerida para 3° medio</h2>
-      <p><strong>Trabajo práctico:</strong> En grupos pequeños, planificar e instalar un tramo de canaleta sobre una superficie de práctica o maqueta, siguiendo un recorrido definido por el docente.</p>
+    <section class="slide">
+      <h2>Errores frecuentes</h2>
+      <div class="destacado errores">
+        <ul>
+          <li>Cortar sin medir correctamente.</li>
+          <li>Instalar la canaleta torcida.</li>
+          <li>Dejar cables comprimidos o desordenados.</li>
+          <li>No considerar accesorios de unión o esquinas.</li>
+          <li>Trabajar sin orden ni medidas de seguridad.</li>
+        </ul>
+      </div>
+      <div class="pie-slide">Diapositiva 13</div>
+    </section>
+
+    <section class="slide">
+      <h2>Actividad práctica para 3° medio</h2>
+      <div class="destacado actividad">
+        <p><strong>Desafío:</strong> en grupos, instalar un tramo de canaleta sobre una superficie de práctica siguiendo un recorrido definido.</p>
+      </div>
       <ol>
-        <li>Medir el tramo.</li>
-        <li>Marcar el recorrido.</li>
-        <li>Cortar la canaleta.</li>
-        <li>Presentar y corregir si es necesario.</li>
-        <li>Fijar la base.</li>
-        <li>Instalar un cable de red o conductor de práctica.</li>
-        <li>Cerrar con tapa y revisar la terminación.</li>
+        <li>Planificar el recorrido.</li>
+        <li>Medir y marcar.</li>
+        <li>Cortar y presentar.</li>
+        <li>Fijar.</li>
+        <li>Instalar el cable.</li>
+        <li>Cerrar y revisar.</li>
       </ol>
-      <p><strong>Criterios de evaluación:</strong> seguridad, orden, precisión en las medidas, calidad de terminación y explicación del procedimiento realizado.</p>
+      <p><strong>Criterios de evaluación:</strong> seguridad, orden, precisión, trabajo en equipo y calidad de terminación.</p>
+      <div class="pie-slide">Diapositiva 14</div>
     </section>
 
-    <section>
-      <h2>Espacio para imágenes del material original</h2>
-      <p>Este archivo fue preparado para reemplazar o complementar la versión original con un formato más claro y pedagógico. Si deseas, en una siguiente iteración puedo integrar explícitamente las imágenes originales del documento fuente en secciones específicas, siempre que me indiques si quieres conservarlas como capturas completas por página o reorganizarlas por contenido.</p>
-      <div class="imagenes">
-        <div class="card">
-          <p><strong>Imagen 1:</strong> Espacio reservado para imagen original de apoyo.</p>
-        </div>
-        <div class="card">
-          <p><strong>Imagen 2:</strong> Espacio reservado para imagen original de apoyo.</p>
-        </div>
-        <div class="card">
-          <p><strong>Imagen 3:</strong> Espacio reservado para imagen original de apoyo.</p>
-        </div>
-      </div>
+    <section class="slide portada">
+      <h2>Cierre</h2>
+      <p>Una instalación de canaletas bien realizada protege los cables, mejora la conectividad y entrega una presentación más profesional.</p>
+      <p><strong>La calidad técnica también se demuestra en el orden, la seguridad y la prolijidad.</strong></p>
+      <div class="pie-slide">Diapositiva 15</div>
     </section>
-  </main>
-
-  <div class="pie">
-    Material mejorado para uso educativo en español · Instalación de canaletas y conectividad · 3° medio
   </div>
 </body>
 </html>
